@@ -1,0 +1,27 @@
+# Welcome to Serverless!
+
+service: Flagtick
+
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs14.x
+  memorySize: 512
+  timeout: 5
+  versionFunctions: false
+  region: ap-southeast-1
+  tracing:
+    lambda: true
+
+functions:
+  getFlagtick:
+    handler: handler.index
+    name: getFlagtick
+    description: Demo function to get list of stages
+    runtime: nodejs14.x 
+    memorySize: 512 
+    timeout: 10 
+    provisionedConcurrency: 3 
+    reservedConcurrency: 5 
+    tracing: PassThrough 
